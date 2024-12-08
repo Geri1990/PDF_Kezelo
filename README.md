@@ -2,7 +2,9 @@
 PDF kezelő applikáció
 
 
-A program célját.
+A program arra készült, hogy bizonyos modosításokat lehessen végrehajtani egy álltalunk választott PDF fájlon.
 
-A funkciók listáját.
+Eddigi funkciók listáját:
+
+-PDF-ket képes összefűzni
 A telepítés és futtatás módját.
