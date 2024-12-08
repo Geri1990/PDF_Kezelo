@@ -36,3 +36,15 @@ def rotate_pdf(input_path, output_path, rotation):
     with open(output_path, "wb") as output_file:
         writer.write(output_file)
     print(f"PDF forgatva: {output_path}")
+
+import tkinter as tk
+from tkinter import filedialog
+
+def browse_file():
+    file_path = filedialog.askopenfilename()
+    print(f"Kiválasztott fájl: {file_path}")
+
+root = tk.Tk()
+tk.Button(root, text="PDF kiválasztása", command=browse_file).pack()
+root.mainloop()
+
