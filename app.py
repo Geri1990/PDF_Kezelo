@@ -18,10 +18,21 @@ if __name__ == "__main__":
     from PyPDF2 import PdfReader
 
 
-    def extract_text(pdf_path):
-        reader = PdfReader(pdf_path)
-        for page in reader.pages:
-            print(page.extract_text())
+def extract_text(pdf_path):
+    reader = PdfReader(pdf_path)
+    for page in reader.pages:
+        print(page.extract_text())
 
-    # Példa hívás:
-    # extract_text("file.pdf")
+# Példa hívás:
+# extract_text("file.pdf")
+
+
+def rotate_pdf(input_path, output_path, rotation):
+    reader = PdfReader(input_path)
+    writer = PdfWriter()
+    for page in reader.pages:
+        page.rotate(rotation)  # Pozitív érték: óramutató járásával megegyező
+        writer.add_page(page)
+    with open(output_path, "wb") as output_file:
+        writer.write(output_file)
+    print(f"PDF forgatva: {output_path}")
