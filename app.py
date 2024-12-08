@@ -14,3 +14,14 @@ def merge_pdfs(output_path, *input_paths):
 if __name__ == "__main__":
     # Példa használatra
     merge_pdfs("output.pdf", "file1.pdf", "file2.pdf")
+
+    from PyPDF2 import PdfReader
+
+
+    def extract_text(pdf_path):
+        reader = PdfReader(pdf_path)
+        for page in reader.pages:
+            print(page.extract_text())
+
+    # Példa hívás:
+    # extract_text("file.pdf")
